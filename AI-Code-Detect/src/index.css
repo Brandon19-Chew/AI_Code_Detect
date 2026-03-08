@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 30% 92%;
+
+    --card: 222 40% 9%;
+    --card-foreground: 210 30% 92%;
+
+    --popover: 222 40% 9%;
+    --popover-foreground: 210 30% 92%;
+
+    --primary: 185 100% 50%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 35% 14%;
+    --secondary-foreground: 210 30% 80%;
+
+    --muted: 222 35% 14%;
+    --muted-foreground: 215 20% 50%;
+
+    --accent: 142 70% 45%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 185 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 30% 92%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 35% 14%;
+    --sidebar-accent-foreground: 210 30% 80%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 185 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, pre, textarea.code-input {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px hsla(185, 100%, 50%, 0.15);
+  }
+
+  .glow-cyan-sm {
+    box-shadow: 0 0 10px hsla(185, 100%, 50%, 0.1);
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, hsl(185, 100%, 55%), hsl(200, 100%, 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
